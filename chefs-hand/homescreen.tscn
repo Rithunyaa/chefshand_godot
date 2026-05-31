@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://csx7ybn8yacj4"]
+
+[ext_resource type="Script" uid="uid://cgvk4nu5gs0i0" path="res://homescreen.gd" id="1_a33i8"]
+[ext_resource type="Texture2D" uid="uid://dou7cyvtc058g" path="res://assets/images/homescreen/bg_homescreen.png" id="1_tq0vd"]
+[ext_resource type="Texture2D" uid="uid://cb7mgkp4yvmis" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" id="3_1bjcg"]
+[ext_resource type="Texture2D" uid="uid://8goerw6nbp2x" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack - Copy (2).png" id="4_edeuv"]
+[ext_resource type="Texture2D" uid="uid://dgswk4cpaojkv" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack - Copy.png" id="5_a17e7"]
+[ext_resource type="FontFile" uid="uid://rq4qnwy0l0ll" path="res://assets/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="6_v0us7"]
+[ext_resource type="Texture2D" uid="uid://gl30hjydg61d" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu - Copy.png" id="7_v0us7"]
+[ext_resource type="AudioStream" uid="uid://dgyobg3ah574w" path="res://assets/audio/homescreen/background.mp3" id="8_4wcxg"]
+[ext_resource type="AudioStream" uid="uid://060oiklnge5s" path="res://assets/audio/homescreen/button_click.wav" id="9_gvolp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0us7"]
+bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gboke"]
+bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wcxg"]
+bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvolp"]
+bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcdx0"]
+bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Control" type="Control" unique_id=189899722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a33i8")
+
+[node name="background1" type="Sprite2D" parent="." unique_id=888795267]
+position = Vector2(306.00006, 328.5)
+scale = Vector2(1.5203621, 1.1237624)
+texture = ExtResource("1_tq0vd")
+
+[node name="background2" type="Sprite2D" parent="." unique_id=473409446]
+position = Vector2(832.99994, 328)
+scale = Vector2(1.5203621, 1.1237624)
+texture = ExtResource("1_tq0vd")
+
+[node name="playbutton" type="TextureButton" parent="." unique_id=1731986336]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 384.0
+offset_right = 470.0
+offset_bottom = 416.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_1bjcg")
+
+[node name="settingsbutton" type="TextureButton" parent="." unique_id=820502325]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = -1.0
+offset_right = 1086.0
+offset_bottom = 29.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("4_edeuv")
+
+[node name="titlebox" type="Sprite2D" parent="." unique_id=1283856288]
+position = Vector2(559, 240)
+scale = Vector2(6.578947, 8)
+texture = ExtResource("5_a17e7")
+
+[node name="titlelogo" type="RichTextLabel" parent="." unique_id=1552815364]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 174.0
+offset_right = 933.0
+offset_bottom = 307.0
+theme_override_colors/default_color = Color(0.7137255, 0.5372549, 0.38431373, 1)
+theme_override_fonts/normal_font = ExtResource("6_v0us7")
+theme_override_font_sizes/normal_font_size = 90
+text = "Chef's Hand"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="versiontext" type="RichTextLabel" parent="." unique_id=1689752861]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 613.0
+offset_right = 174.0
+offset_bottom = 684.0
+theme_override_colors/default_color = Color(0.37913287, 0.2682746, 0.17350417, 1)
+theme_override_fonts/normal_font = ExtResource("6_v0us7")
+theme_override_font_sizes/normal_font_size = 30
+text = "v1.0
+
+"
+
+[node name="settings_popup" type="Sprite2D" parent="." unique_id=234586188]
+visible = false
+position = Vector2(540, 324.99997)
+scale = Vector2(7.527558, 4.5972223)
+texture = ExtResource("7_v0us7")
+
+[node name="fade_out" type="ColorRect" parent="." unique_id=867631954]
+visible = false
+layout_mode = 0
+offset_left = -13.0
+offset_top = -21.0
+offset_right = 1167.0
+offset_bottom = 665.0
+color = Color(0.14366424, 0.0909911, 0.047280557, 1)
+
+[node name="musiclabel" type="RichTextLabel" parent="." unique_id=1871809430]
+visible = false
+layout_mode = 0
+offset_left = 223.0
+offset_top = 236.0
+offset_right = 502.0
+offset_bottom = 327.0
+theme_override_colors/default_color = Color(0.62635803, 0.47581053, 0.3084316, 1)
+theme_override_fonts/normal_font = ExtResource("6_v0us7")
+theme_override_font_sizes/normal_font_size = 80
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfxlabel" type="RichTextLabel" parent="." unique_id=1376966357]
+visible = false
+layout_mode = 0
+offset_left = 217.0
+offset_top = 406.0
+offset_right = 496.0
+offset_bottom = 497.0
+theme_override_colors/default_color = Color(0.62635803, 0.47581053, 0.3084316, 1)
+theme_override_fonts/normal_font = ExtResource("6_v0us7")
+theme_override_font_sizes/normal_font_size = 80
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_button" type="Button" parent="." unique_id=1524923829]
+visible = false
+layout_mode = 0
+offset_left = 518.0
+offset_top = 231.0
+offset_right = 813.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("6_v0us7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0us7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gboke")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wcxg")
+text = "On"
+
+[node name="sfx_toggle" type="Button" parent="." unique_id=1067184986]
+visible = false
+layout_mode = 0
+offset_left = 517.0
+offset_top = 407.0
+offset_right = 812.0
+offset_bottom = 499.0
+theme_override_fonts/font = ExtResource("6_v0us7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0us7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gvolp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rcdx0")
+text = "On"
+
+[node name="music_player" type="AudioStreamPlayer2D" parent="." unique_id=396411240]
+stream = ExtResource("8_4wcxg")
+autoplay = true
+
+[node name="sfx_player" type="AudioStreamPlayer2D" parent="." unique_id=1197524761]
+stream = ExtResource("9_gvolp")
+
+[connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="settingsbutton" to="." method="_on_settingsbutton_pressed"]
