@@ -11,9 +11,6 @@ extends Control
 @onready var music_player = $music_player
 @onready var sfx_player = $sfx_player
 
-var popup_open = false
-var music_enabled = true
-var sfx_enabled = true
 var play_original_scale
 
 func _ready():
@@ -21,8 +18,10 @@ func _ready():
 	fade_out.visible = true
 	fade_out.modulate.a = 0
 	_set_popup_visible(false)
-	music_button.text = "ON"
-	sfx_button.text = "ON"
+	music_button.text = "ON" if Global.music_enabled else "OFF"
+	sfx_button.text = "ON" if Global.sfx_enabled else "OFF"
+	if !Global.music_enabled:
+		music_player.stop()
 	play_button.pressed.connect(_on_play_pressed)
 	settings_button.pressed.connect(_on_settings_pressed)
 	music_button.pressed.connect(_on_music_pressed)
@@ -34,7 +33,6 @@ func _ready():
 	play_button.button_up.connect(_on_play_exit)
 
 func _set_popup_visible(state):
-	popup_open = state
 	settings_popup.visible = state
 	music_button.visible = state
 	sfx_button.visible = state
@@ -42,7 +40,7 @@ func _set_popup_visible(state):
 	sfx_label.visible = state
 
 func _play_sfx():
-	if sfx_enabled:
+	if Global.sfx_enabled:
 		sfx_player.play()
 
 func _on_play_pressed():
@@ -56,12 +54,12 @@ func _on_play_pressed():
 
 func _on_settings_pressed():
 	_play_sfx()
-	_set_popup_visible(!popup_open)
+	_set_popup_visible(!settings_popup.visible)
 
 func _on_music_pressed():
 	_play_sfx()
-	music_enabled = !music_enabled
-	if music_enabled:
+	Global.music_enabled = !Global.music_enabled
+	if Global.music_enabled:
 		music_button.text = "ON"
 		music_player.play()
 	else:
@@ -69,15 +67,15 @@ func _on_music_pressed():
 		music_player.stop()
 
 func _on_sfx_pressed():
-	sfx_enabled = !sfx_enabled
-	if sfx_enabled:
+	Global.sfx_enabled = !Global.sfx_enabled
+	if Global.sfx_enabled:
 		sfx_button.text = "ON"
 		sfx_player.play()
 	else:
 		sfx_button.text = "OFF"
 
 func _unhandled_input(event):
-	if !popup_open:
+	if !settings_popup.visible:
 		return
 	if event is InputEventMouseButton and event.pressed:
 		if music_button.get_global_rect().has_point(event.position):
