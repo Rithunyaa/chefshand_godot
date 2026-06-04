@@ -3,6 +3,7 @@ extends Node2D
 @onready var card_list = $right_panel/scroll_container/card_list
 @onready var trash_can = $trash_can
 const CARD_SCENE = preload("res://card.tscn")
+
 var discovered = []
 var start_time = 0
 var combinations = {

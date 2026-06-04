@@ -10,6 +10,7 @@ var dragging = false
 var drag_offset = Vector2()
 var original_position = Vector2()
 
+@warning_ignore("shadowed_variable_base_class")
 func setup(name, art_texture):
 	card_name = name
 	ingredient_name.text = name
