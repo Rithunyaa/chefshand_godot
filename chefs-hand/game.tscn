@@ -14,28 +14,38 @@ corner_radius_top_right = 80
 corner_radius_bottom_right = 80
 corner_radius_bottom_left = 80
 
-[node name="Node2D" type="Node2D" unique_id=226011620]
+[node name="Node2D" type="Node2D" unique_id=60810716]
 script = ExtResource("1_feb5d")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=766964200]
-position = Vector2(545, 336)
-scale = Vector2(2.8568115, 1.5156308)
+position = Vector2(589.74896, 322.1648)
+scale = Vector2(3.0704105, 1.5721011)
 texture = ExtResource("1_80nbo")
 
 [node name="right_panel" type="Control" parent="." unique_id=299774247]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 952.0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="scroll_container" type="ScrollContainer" parent="right_panel" unique_id=659639817]
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 648.0
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 950.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 644.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/scroll_hint_vertical_color = Color(0, 0, 0, 1)
 
 [node name="card_list" type="VBoxContainer" parent="right_panel/scroll_container" unique_id=1298160294]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="trash_can" type="Sprite2D" parent="." unique_id=1407059810]

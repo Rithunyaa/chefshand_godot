@@ -69,7 +69,7 @@ var card_art = {
 	"Baked Potato": preload("res://assets/images/main_game/FreePixelFood/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Potato.png"),
 	"Lemon Pie": preload("res://assets/images/main_game/FreePixelFood/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PieLemon.png"),
 	"Sushi": preload("res://assets/images/main_game/FreePixelFood/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Sushi.png"),
-	"Cheesecake": preload("C:/Users/Rithunyaa/chefshand_godot/chefs-hand/assets/images/main_game/Free_pixel_food_16x16/Free_pixel_food_16x16/Icons/cake_cheese.png"),
+	"Cheesecake": preload("res://assets/images/main_game/Free_pixel_food_16x16/Free_pixel_food_16x16/Icons/cake_cheese.png"),
 	"Coffee": preload("res://assets/images/main_game/Free_pixel_food_16x16/Free_pixel_food_16x16/Icons/coffee_espresso.png"),
 	"Carrot Jam": preload("res://assets/images/main_game/Free_pixel_food_16x16/Free_pixel_food_16x16/Icons/jam_peach.png"),
 	"Crossaint": preload("res://assets/images/main_game/Free_pixel_food_16x16/Free_pixel_food_16x16/Icons/pastry_croissant.png"),
@@ -88,6 +88,12 @@ func _ready():
 		add_to_panel(ingredient)
 	update_combo_label()
 	print("Loaded ingredients:", card_list.get_child_count())
+	print("panel rect:", $right_panel.get_global_rect())
+	print("scroll rect:", $right_panel/scroll_container.get_global_rect())
+	print($right_panel/scroll_container.size)
+	await get_tree().process_frame
+	card_list.queue_sort()
+	$right_panel/scroll_container.queue_sort()
 
 func add_to_panel(cname):
 	var btn = Button.new()
@@ -155,18 +161,6 @@ func _check_win():
 func update_combo_label():
 	combo_label.text = str(discovered.size()) + "/" + str(combinations.size()) + " combinations found"
 	
-func _input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_P:
-			var elapsed = 245 # fake time in seconds
-			var minutes = int(elapsed) / 60
-			var seconds = int(elapsed) % 60
-			result_text.text = (
-				"You found all combinations!\n\n"
-				+ "Time: %d:%02d" % [minutes, seconds]
-			)
-			win_popup.visible = true
-			get_tree().paused = false
 
 func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://homescreen.tscn")
