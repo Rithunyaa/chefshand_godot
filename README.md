@@ -3,7 +3,6 @@
 DESCRIPTION: Chef’s Hand is a drag-and-combine cooking puzzle game where you put ingredient cards together to find new recipes.
 
 HOW TO PLAY:
-1. Open full screen on Itch.io
 2. Click Play on the home screen
 3. Click Next once you have read the instructions
 4. Click an ingredient on the left to spawn its corresponding cards
