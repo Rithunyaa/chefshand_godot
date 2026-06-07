@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dal7yxjd8ebbn"]
+
+[ext_resource type="Script" uid="uid://cwga2ig3ac8cs" path="res://instructions.gd" id="1_ne5nb"]
+[ext_resource type="Texture2D" uid="uid://gbmbr655ltei" path="res://assets/images/main_game/background.png" id="2_jh4dl"]
+[ext_resource type="FontFile" uid="uid://crp1cy8apibfu" path="res://assets/fonts/Nunito/static/Nunito-Medium.ttf" id="3_gosh8"]
+[ext_resource type="AudioStream" uid="uid://dgyobg3ah574w" path="res://assets/audio/homescreen/background.mp3" id="4_jh4dl"]
+
+[node name="Node2D" type="Node2D" unique_id=1419037966]
+script = ExtResource("1_ne5nb")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1522919211]
+position = Vector2(577, 328.5)
+scale = Vector2(2.8305492, 1.3979592)
+texture = ExtResource("2_jh4dl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1698668663]
+offset_left = 40.0
+offset_top = -25.0
+offset_right = 826.0
+offset_bottom = 682.0
+theme_override_colors/default_color = Color(0.23744676, 0.13812745, 0.052360073, 1)
+theme_override_fonts/normal_font = ExtResource("3_gosh8")
+theme_override_font_sizes/normal_font_size = 30
+text = "                                HOW TO PLAY
+Goal:
+Discover every recipe by combining ingredients together.
+
+Controls:
+• Click an ingredient from the recipe panel to spawn it.
+• Drag cards around the workspace.
+• Drop one card onto another to try combining them.
+• Drag a card onto the trash can to get rid of it
+
+Combining:
+• If two ingredients make a recipe, a new item appears.
+• If they do not combine, the cards will flash red.
+• New discoveries are added to your ingredient list automatically.
+"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1101231318]
+offset_left = 838.0
+offset_top = 551.0
+offset_right = 1118.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 50
+text = "Next"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=46510057]
+position = Vector2(838, 551)
+stream = ExtResource("4_jh4dl")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

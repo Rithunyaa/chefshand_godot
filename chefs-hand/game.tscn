@@ -3,14 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://gbmbr655ltei" path="res://assets/images/main_game/background.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dihcutmabb3cs" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="Texture2D" uid="uid://8wjpa2igu87b" path="res://assets/images/main_game/trashcan.png" id="2_e2o6t"]
+[ext_resource type="FontFile" uid="uid://uqwvwqv12stw" path="res://assets/fonts/Nunito/static/Nunito-SemiBoldItalic.ttf" id="4_fc0e3"]
+[ext_resource type="FontFile" uid="uid://deo3bb8imwbj0" path="res://assets/fonts/Nunito/static/Nunito-Black.ttf" id="5_7jktm"]
+[ext_resource type="AudioStream" uid="uid://cjtphx08dpatg" path="res://assets/audio/main_game.wav" id="6_ryrav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
+bg_color = Color(0.32156864, 0.19215687, 0.07058824, 0.74509805)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
 
 [node name="Node2D" type="Node2D" unique_id=226011620]
-rotation = -1.9486954
 script = ExtResource("1_feb5d")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=766964200]
-position = Vector2(-518.1991, 417.2965)
-rotation = 1.9198622
+position = Vector2(545, 336)
 scale = Vector2(2.8568115, 1.5156308)
 texture = ExtResource("1_80nbo")
 
@@ -25,12 +33,57 @@ offset_bottom = 648.0
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 648.0
+theme_override_colors/scroll_hint_vertical_color = Color(0, 0, 0, 1)
 
 [node name="card_list" type="VBoxContainer" parent="right_panel/scroll_container" unique_id=1298160294]
 layout_mode = 2
 
 [node name="trash_can" type="Sprite2D" parent="." unique_id=1407059810]
-position = Vector2(-70.86614, 26.739296)
-rotation = 1.9198622
+position = Vector2(66.00001, 65)
 scale = Vector2(0.14738718, 0.12003892)
 texture = ExtResource("2_e2o6t")
+
+[node name="Area2D" type="Area2D" parent="trash_can" unique_id=1708026822]
+position = Vector2(-447.8002, -541.491)
+scale = Vector2(6.7848506, 8.330631)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="trash_can/Area2D" unique_id=899703907]
+polygon = PackedVector2Array(38, 45, 47, 39, 55, 38, 63, 34, 74, 34, 80, 38, 90, 42, 92, 49, 91, 55, 89, 64, 88, 82, 84, 90, 73, 94, 58, 94, 45, 88, 43, 75, 40, 60)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1047457177]
+offset_left = 11.0
+offset_top = 578.0
+offset_right = 406.0
+offset_bottom = 657.0
+theme_override_colors/default_color = Color(0.26124644, 0.16020674, 0.06456777, 1)
+theme_override_fonts/normal_font = ExtResource("4_fc0e3")
+theme_override_font_sizes/normal_font_size = 30
+text = "0/21 Combinations Found"
+vertical_alignment = 1
+
+[node name="win_popup" type="Panel" parent="." unique_id=950023200]
+visible = false
+offset_left = 340.0
+offset_top = 216.0
+offset_right = 717.0
+offset_bottom = 444.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc0e3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="win_popup" unique_id=981685327]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 375.0
+offset_bottom = 229.0
+
+[node name="result_text" type="RichTextLabel" parent="win_popup/VBoxContainer" unique_id=1498244244]
+custom_minimum_size = Vector2(377, 228)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_7jktm")
+theme_override_font_sizes/normal_font_size = 30
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2075623896]
+stream = ExtResource("6_ryrav")
+autoplay = true

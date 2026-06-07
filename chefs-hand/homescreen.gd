@@ -50,7 +50,7 @@ func _on_play_pressed():
 	var tween = create_tween()
 	tween.tween_property(fade_out, "modulate:a", 1.0, 1.5)
 	await tween.finished
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://instructions.tscn")
 
 func _on_settings_pressed():
 	_play_sfx()

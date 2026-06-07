@@ -11,20 +11,19 @@ size = Vector2(100, 143)
 script = ExtResource("1_q5obu")
 
 [node name="card_bg" type="Sprite2D" parent="." unique_id=1709729277]
-position = Vector2(513, 313)
+position = Vector2(48.000008, 72)
 rotation = 0.034906585
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_kikvd")
-offset = Vector2(-197, -259)
 
 [node name="ingredient_art" type="Sprite2D" parent="." unique_id=1528427084]
-position = Vector2(513, 313)
+position = Vector2(50, 65)
 
 [node name="ingredient_name" type="Label" parent="." unique_id=960334479]
-offset_left = 470.0
-offset_top = 330.0
-offset_right = 561.0
-offset_bottom = 356.0
+offset_left = 9.0
+offset_top = 99.0
+offset_right = 89.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0.22271267, 0.14177945, 0.075215556, 1)
 theme_override_fonts/font = ExtResource("2_rjlel")
 theme_override_font_sizes/font_size = 20
@@ -32,8 +31,8 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="area" type="Area2D" parent="." unique_id=954614509]
-position = Vector2(390, 146)
+position = Vector2(388, 143)
 
 [node name="collision" type="CollisionShape2D" parent="area" unique_id=786628156]
-position = Vector2(68, 86.5)
+position = Vector2(-338, -71)
 shape = SubResource("RectangleShape2D_q5obu")
