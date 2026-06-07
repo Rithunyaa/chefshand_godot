@@ -15,24 +15,24 @@ HOW TO PLAY:
 Discover all 21 recipes to complete the game and see your final time!
 
 CHEAT SHEET (use this only if you are stuck):
-  Egg + Heat → Fried Egg
-  Egg + Egg → Scrambled Eggs
-  Egg + Water → Soft-boiled Eggs
-  Flour + Heat → Bread
-  Bread + Salt → Pretzel
-  Water + Water → Popsicle
-  Fish + Rice → Onigiri
-  Chili + Onion → Soup
-  Chicken + Oil → Cooked Chicken
-  Potato + Heat → Baked Potato
-  Rice + Shrimp → Sushi
-  Flour + Sugar → Cookie
-  Flour + Milk → Waffles
-  Egg + Flour → Brownie
-  Lemon + Flour → Tart
-  Lemon + Sugar → Lemon Pie
-  Heat + Sugar → Croissant
-  Carrot + Sugar → Carrot Jam
-  Tomato + Sugar → Tomato Jam
-  Heat + Milk → Cheesecake
-  Coffee Bean + Milk → Coffee
+  Egg + Heat → Fried Egg, 
+  Egg + Egg → Scrambled Eggs, 
+  Egg + Water → Soft-boiled Eggs, 
+  Flour + Heat → Bread, 
+  Bread + Salt → Pretzel, 
+  Water + Water → Popsicle, 
+  Fish + Rice → Onigiri, 
+  Chili + Onion → Soup, 
+  Chicken + Oil → Cooked Chicken, 
+  Potato + Heat → Baked Potato, 
+  Rice + Shrimp → Sushi, 
+  Flour + Sugar → Cookie, 
+  Flour + Milk → Waffles, 
+  Egg + Flour → Brownie, 
+  Lemon + Flour → Tart, 
+  Lemon + Sugar → Lemon Pie, 
+  Heat + Sugar → Croissant, 
+  Carrot + Sugar → Carrot Jam, 
+  Tomato + Sugar → Tomato Jam, 
+  Heat + Milk → Cheesecake, 
+  Coffee Bean + Milk → Coffee, 
