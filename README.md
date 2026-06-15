@@ -1,5 +1,4 @@
 # chefshand_godot
-
 DESCRIPTION: Chef’s Hand is a drag-and-combine cooking puzzle game where you put ingredient cards together to find new recipes.
 
 HOW TO PLAY:
