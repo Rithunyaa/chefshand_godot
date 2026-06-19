@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Chefs_Hand"
+config/tags=PackedStringArray("horizon")
 run/main_scene="uid://csx7ybn8yacj4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

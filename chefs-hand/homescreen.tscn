@@ -3,12 +3,31 @@
 [ext_resource type="Script" uid="uid://cgvk4nu5gs0i0" path="res://homescreen.gd" id="1_a33i8"]
 [ext_resource type="Texture2D" uid="uid://dou7cyvtc058g" path="res://assets/images/homescreen/bg_homescreen.png" id="1_tq0vd"]
 [ext_resource type="Texture2D" uid="uid://cb7mgkp4yvmis" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" id="3_1bjcg"]
-[ext_resource type="Texture2D" uid="uid://8goerw6nbp2x" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack - Copy (2).png" id="4_edeuv"]
-[ext_resource type="Texture2D" uid="uid://dgswk4cpaojkv" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack - Copy.png" id="5_a17e7"]
+[ext_resource type="Texture2D" uid="uid://cqa63g7s4hbvc" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_gboke"]
+[ext_resource type="Texture2D" uid="uid://c40fyany2o3ef" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="6_4wcxg"]
 [ext_resource type="FontFile" uid="uid://rq4qnwy0l0ll" path="res://assets/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="6_v0us7"]
-[ext_resource type="Texture2D" uid="uid://gl30hjydg61d" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu - Copy.png" id="7_v0us7"]
 [ext_resource type="AudioStream" uid="uid://dgyobg3ah574w" path="res://assets/audio/homescreen/background.mp3" id="8_4wcxg"]
 [ext_resource type="AudioStream" uid="uid://060oiklnge5s" path="res://assets/audio/homescreen/button_click.wav" id="9_gvolp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a17e7"]
+atlas = ExtResource("3_1bjcg")
+region = Rect2(0, 29.666672, 96.00003, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvolp"]
+atlas = ExtResource("4_gboke")
+region = Rect2(640, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcdx0"]
+atlas = ExtResource("4_gboke")
+region = Rect2(672, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3bxt"]
+atlas = ExtResource("4_gboke")
+region = Rect2(160, 176, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5j2"]
+atlas = ExtResource("6_4wcxg")
+region = Rect2(0, 0, 128, 144)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0us7"]
 bg_color = Color(0.627451, 0.4745098, 0.30980393, 0.5372549)
@@ -71,7 +90,7 @@ offset_top = 384.0
 offset_right = 470.0
 offset_bottom = 416.0
 scale = Vector2(4, 4)
-texture_normal = ExtResource("3_1bjcg")
+texture_normal = SubResource("AtlasTexture_a17e7")
 
 [node name="settingsbutton" type="TextureButton" parent="." unique_id=820502325]
 layout_mode = 0
@@ -80,12 +99,13 @@ offset_top = -1.0
 offset_right = 1086.0
 offset_bottom = 29.0
 scale = Vector2(3, 3)
-texture_normal = ExtResource("4_edeuv")
+texture_normal = SubResource("AtlasTexture_gvolp")
+texture_pressed = SubResource("AtlasTexture_rcdx0")
 
 [node name="titlebox" type="Sprite2D" parent="." unique_id=1283856288]
 position = Vector2(559, 240)
 scale = Vector2(6.578947, 8)
-texture = ExtResource("5_a17e7")
+texture = SubResource("AtlasTexture_h3bxt")
 
 [node name="titlelogo" type="RichTextLabel" parent="." unique_id=1552815364]
 layout_mode = 0
@@ -118,7 +138,7 @@ text = "v2.0
 visible = false
 position = Vector2(540, 324.99997)
 scale = Vector2(7.527558, 4.5972223)
-texture = ExtResource("7_v0us7")
+texture = SubResource("AtlasTexture_ta5j2")
 
 [node name="fade_out" type="ColorRect" parent="." unique_id=867631954]
 visible = false
